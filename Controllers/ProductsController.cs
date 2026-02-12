@@ -1,6 +1,5 @@
 ﻿using API.Data;
 using API.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +8,6 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class ProductsController(StoreContext context) : ControllerBase
     {
         [HttpGet]
@@ -27,6 +25,5 @@ namespace API.Controllers
 
             return Ok(product);
         }
-
     }
 }
